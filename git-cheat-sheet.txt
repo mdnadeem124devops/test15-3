@@ -1,0 +1,158 @@
+General Git Commands
+=====================
+
+$ git –version ==> Displays the version fo the git installed
+
+$ git config –global alias.st status ==> Create an alias for git status
+
+$ git help ==> Displays help on the git command
+
+$ git init ==> Initialize git
+
+$ git add . ==> Make everything in CWD ready to commit
+
+$ git add index.html ==> Make one file ready to commit
+
+$ git commit -m “Message” ==> Commit changes
+
+$ git commit -am “Message” ==> Add file and Commit in one commad
+
+$ git rm index.html ==> Remove files from git
+
+$ git add -u ==> Update all changes
+
+$ git rm –cached index.html ==> Remove & not to track a file any more
+
+$ git mv index.html dir/index_new.html ==> Move or Rename files
+
+$ git checkout — index.html ==> Restore file from a latest commit
+
+$ git checkout 6eb715d — index.html ==> Restore file from a custom commit of current branch
+
+$ git clean -n ==> Delete dry run of untracked files
+
+$ git clean -f ==> Delete untracked files
+
+$ git reset HEAD index.html ==> Undo adds
+
+$ git commit –amend -m “Message” ==> Commit to most recent commit
+
+$ git commit –amend -m “New Message” ==> Update most recent commit message
+
+
+Tagging and Branching and Merging
+==================================
+
+$ git tag ==> Show all released version
+
+$ git tag -l -n1 ==> Show all released versions with comments
+
+$ git tag v1.0.0 ==> Create release version
+
+$ git tag -a v1.0.0 -m ‘Message’ ==> Create release version with comment
+
+$ git checkout v1.0.0 ==> Checkout a specific release version
+
+$ git branch ==> Show branches
+
+$ git branch branchname ==> Create branch
+
+$ git checkout branchname ==> Change to a branch
+
+$ git checkout -b branchname ==> Create and change to a branch
+
+$ git branch -m branchname new_branchname
+
+or ==> Rename a branch
+
+$ git branch –move branchname new_branchname
+
+$ git branch –merged ==> List all completely merged branch with current one
+
+$ git branch -d branchname
+
+or ==> Delete merged branch
+
+$ git branch –delete branchname
+
+$ git branch -D branch_to_delete ==> Delete not merged branch
+
+$ git merge branchname ==> True Merge
+
+$ git merge –ff-only branchname ==> Merge to Master
+
+$ git merge –no-ff branchname ==> Merge to master/force a new commit
+
+$ git merge –abort ==> Stop merge
+
+
+Working with remote Git/GitHub
+==============================
+
+$ git remote ==> Show remote
+
+$ git remote -v ==> Show remote details
+
+$ git remote add origin https://github.com/user/project.git ==> Add remote origin from GitHub project
+
+$ git remote add origin ssh://root@123.123.123.123/path/to/repository/.git ==> Ad remote origin from existing empty project
+
+$ git remote rm origin ==> Remove origin
+
+$ git branch -r ==> Show remote branches
+
+$ git branch -a ==> Show all branches
+
+$ git diff origin/master..master ==> Compare
+
+$ git push -u origin master ==> Default push/set default with -u
+
+$ git push origin master ==> Push to default
+
+$ git fetch origin ==> Fetch
+
+$ git pull ==> Pull
+
+$ git pull origin branchname ==> Pull specific branch
+
+$ git merge origin/master ==> Merge fetched commits
+
+$ git clone https://github.com/user/project.git or: git clone ssh://user@domain.com/~/dir/.git ==> Clone to local system
+
+$ git clone https://github.com/user/project.git ~/dir/folder ==> Clone to a local folder
+
+$ git clone -b branchname https://github.com/user/project.git ==> Clone specific branch to local host
+
+$ git push origin :branchname or: git push origin –delete branchname ==> Delete remote branch/Push nothing
+
+
+Git Logs
+========
+
+$ git log ==> Show commits
+
+$ git log –oneline ==> Show oneline summary of commits
+
+$ git log –oneline -3 ==> Show oneline summary of last three commits
+
+$ git log –author=”Sven” git log –grep=”Message” git log –until=2013-01-01 git log –since=2013-01-01 ==> Show only custom commits
+
+$ git log -p ==> Show changes
+
+$ git log –stat –summary ==> Show status and summary of commits
+
+$ git log –graph ==> Show history of commits as graph
+
+$ git log –oneline –graph –all –decorate ==> Show history of commits as graph summary
+
+
+Archiving
+=========
+
+$ git archive –format zip –output filename.zip master ==> Create a zip archive
+
+$ git log –author=sven –all > log.txt ==> Write custom logs to a file
+
+And finally a useful template for creating .gitignore,
+
+.gitignore Templates
